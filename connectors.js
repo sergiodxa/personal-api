@@ -15,17 +15,3 @@ exports.gh = async ({ GITHUB_TOKEN }) => {
     });
   };
 };
-
-exports.now = async ({ NOW_TOKEN }) => {
-  return (url, options = {}) => {
-    const ROOT_URL = 'https://api.zeit.co';
-
-    return fetch(`${ROOT_URL}${url}`, {
-      ...options,
-      headers: {
-        ...options.headers,
-        Authorization: `Bearer ${NOW_TOKEN}`
-      }
-    });
-  }
-}
