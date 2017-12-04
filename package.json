@@ -29,6 +29,7 @@
     "@grial/connector-fs": "^1.0.1",
     "@grial/server": "^1.5.1",
     "abab": "^1.0.4",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "node-fetch": "^1.7.3"
   }
 }
