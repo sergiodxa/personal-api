@@ -2,7 +2,8 @@
   "name": "personal-api",
   "description": "An API to be used for my personal site",
   "scripts": {
-    "start": "grial start"
+    "start": "grial start",
+    "deploy": "now -t $TOKEN && now alias $TOKEN"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,11 @@
     "abab": "^1.0.4",
     "lodash": "^4.17.4",
     "node-fetch": "^1.7.3"
+  },
+  "now": {
+    "alias": "sergio-api.now.sh",
+    "env": {
+      "GITHUB_TOKEN": "@gh_personal_site_token"
+    }
   }
 }
