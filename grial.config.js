@@ -12,6 +12,6 @@ exports.graphiqlConfig = ({ request, ...options }) => {
   const token = process.env.API_TOKEN || 'test-token';
   return {
     ...options,
-    passHeader: `Authorization: ${token}`
+    passHeader: `Authorization: '${token}'`
   }
 }
