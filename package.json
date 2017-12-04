@@ -25,6 +25,13 @@
     "url": "https://github.com/sergiodxa/personal-api/issues"
   },
   "homepage": "https://sergio.now.sh",
+  "now": {
+    "alias": "sergio-api.now.sh",
+    "env": {
+      "NODE_ENV": "production",
+      "GITHUB_TOKEN": "@gh_personal_site_token"
+    }
+  },
   "dependencies": {
     "@grial/cli": "^1.3.0",
     "@grial/connector-fs": "^1.0.1",
@@ -33,12 +40,7 @@
     "lodash": "^4.17.4",
     "node-fetch": "^1.7.3"
   },
-  "now": {
-    "alias": "sergio-api.now.sh",
-    "env": {
-      "NODE_ENV": "production",
-      "GITHUB_TOKEN": "@gh_personal_site_token"
-    }
-  },
-  "devDependencies": {}
+  "devDependencies": {
+    "now": "^8.5.4"
+  }
 }
