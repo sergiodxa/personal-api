@@ -33,7 +33,8 @@
     "alias": "sergio-api.now.sh",
     "env": {
       "NODE_ENV": "production",
-      "GITHUB_TOKEN": "@gh_personal_site_token"
+      "GITHUB_TOKEN": "@gh_personal_site_token",
+      "API_TOKEN": "@personal_api_token"
     }
   },
   "dependencies": {

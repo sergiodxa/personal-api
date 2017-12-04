@@ -10,7 +10,15 @@ exports.Query = {
 };
 
 exports.Mutation = {
-  async publishEssay(_, { input }, { connectors }) {
+  async publishEssay(_, { input }, { connectors, request }) {
+    const { token } = request;
+
+    if (process.env.NODE_ENV === 'production') {
+      if (token !== process.env.API_TOKEN) {
+        throw new Error('Not Authorized.');
+      }
+    }
+
     const { slug, content, title, description } = input;
 
     const buffer = Buffer.from(
