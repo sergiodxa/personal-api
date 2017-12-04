@@ -8,3 +8,45 @@ exports.Query = {
     };
   }
 };
+
+exports.Mutation = {
+  async publishEssay(_, { input }, { connectors }) {
+    const { slug, content, title, description } = input;
+
+    const buffer = Buffer.from(
+      `
+---
+title: ${title}
+date: ${new Date().toJSON()}
+description: ${description}
+slug: ${slug}
+---
+${content}`,
+      'utf8'
+    );
+
+    let ghBody;
+    try {
+      const ghResponse = await connectors.gh(
+        `/repos/sergiodxa/personal-api/contents/essays/${slug}.md`,
+        {
+          body: JSON.stringify({
+            message: `Publish post ${title}`,
+            committer: {
+              name: 'Sergio Xalambrí',
+              email: 'sergiodxa@gmail.com'
+            },
+            content: buffer.toString('base64')
+          })
+        }
+      );
+      ghBody = await ghResponse.json();
+    } catch (error) {
+      throw new Error('Failed to create file on GitHub.');
+    }
+
+    console.log(ghBody);
+
+    return true;
+  }
+};

@@ -16,6 +16,22 @@ type Query {
   getEssay(slug: String!): Essay!
 }
 
+input PublishInput {
+  # A markdown content of the essay (without the main title)
+  content: String!
+  # The title of the essay
+  title: String!
+  # The essay file name
+  slug: String!
+  # A description of the post limited to 140 characters
+  description: String!
+}
+
+type Mutation {
+  publishEssay(input: PublishInput!): Boolean!
+}
+
 schema {
   query: Query
+  mutation: Mutation
 }
