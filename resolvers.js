@@ -14,8 +14,7 @@ exports.Mutation = {
     const { slug, content, title, description } = input;
 
     const buffer = Buffer.from(
-      `
----
+      `---
 title: ${title}
 date: ${new Date().toJSON()}
 description: ${description}
@@ -30,6 +29,7 @@ ${content}`,
       const ghResponse = await connectors.gh(
         `/repos/sergiodxa/personal-api/contents/essays/${slug}.md`,
         {
+          method: 'PUT',
           body: JSON.stringify({
             message: `Publish post ${title}`,
             committer: {
@@ -42,10 +42,8 @@ ${content}`,
       );
       ghBody = await ghResponse.json();
     } catch (error) {
-      throw new Error('Failed to create file on GitHub.');
+      throw new Error('Failed to commit the file to GitHub.');
     }
-
-    console.log(ghBody);
 
     return true;
   }
