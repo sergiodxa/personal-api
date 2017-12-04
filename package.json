@@ -3,7 +3,11 @@
   "description": "An API to be used for my personal site",
   "scripts": {
     "start": "grial start",
-    "deploy": "now -t $TOKEN && now alias $TOKEN"
+    "deploy": "now --token $TOKEN",
+    "postdeploy": "npm run alias",
+    "alias": "now alias --token $TOKEN",
+    "postalias": "npm run clean",
+    "clean": "now rm personal-api --safe --yes --token $TOKEN"
   },
   "repository": {
     "type": "git",
