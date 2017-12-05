@@ -4,7 +4,14 @@ const extractMeta = require('./lib/extract-meta');
 exports.Essay = async ({ fs, gh }) => {
   return {
     async getEssay(slug) {
-      const rawContent = await fs.read(resolve(`./essays/${slug}.md`), 'utf-8');
+      let rawContent;
+
+      try {
+        rawContent = await fs.read(resolve(`./essays/${slug}.md`), 'utf-8');
+      } catch (error) {
+        throw new ReferenceError("The essay doesn't exits");
+      }
+
       return extractMeta(rawContent);
     },
 
