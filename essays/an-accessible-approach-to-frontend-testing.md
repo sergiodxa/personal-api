@@ -3,6 +3,7 @@ title: An accessible approach to Frontend testing
 date: 2017-09-30T00:00:00Z
 description: Testing is hard. Testing Frontend is harder. But you should do it anyways.
 slug: an-accessible-approach-to-frontend-testing
+tags: Frontend, Testing, E2E, Linter, Snapshot
 ---
 > Testing is hard. Testing Frontend is harder. But you should do it anyways.
 
