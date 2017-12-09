@@ -9,6 +9,12 @@ type Essay {
   description: String
   # The essay file name
   slug: String
+  # The list of tag assigned to the essay
+  tags: [String]
+  # The URL of the cover image for the essay
+  cover: String
+  # The canonical URL associated to the essay
+  canonicalUrl: String
 }
 
 type Query {
