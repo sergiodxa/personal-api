@@ -15,11 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/sergiodxa/personal-api.git"
   },
-  "keywords": [
-    "grial",
-    "graphql",
-    "personal-api"
-  ],
+  "keywords": ["grial", "graphql", "personal-api"],
   "author": {
     "name": "Sergio Daniel Xalambrí",
     "email": "sergiodxa@gmail.com",
