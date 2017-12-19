@@ -1,4 +1,4 @@
-require('now-env');
+if (!process.env.NOW) require('now-env');
 
 const Grial = require('@grial/server');
 const express = require('express');
