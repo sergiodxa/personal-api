@@ -3,7 +3,7 @@
   "description": "An API to be used for my personal site",
   "main": "server/index.js",
   "scripts": {
-    "dev": "nodemon -- -r now-env .",
+    "dev": "nodemon .",
     "start": "node .",
     "deploy": "now --token $TOKEN",
     "postdeploy": "npm run alias",
