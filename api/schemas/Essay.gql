@@ -1,4 +1,6 @@
 type Essay {
+  # The unique identifier of the essay
+  id: ID!
   # A markdown content of the essay (without the main title)
   content: String!
   # The title of the essay
@@ -15,11 +17,8 @@ type Essay {
   cover: String
   # The canonical URL associated to the essay
   canonicalUrl: String
-}
-
-type Query {
-  # Get a single essay using his slug to search it
-  getEssay(slug: String!): Essay!
+  # If the essay is published it will be used in the list of essays
+  published: Boolean
 }
 
 input PublishInput {
@@ -37,14 +36,4 @@ input PublishInput {
   cover: String
   # The canonical URL associated to the essay
   canonicalUrl: String
-}
-
-type Mutation {
-  # Upload a new essay to the GitHub repository and let Travis start a new deployment
-  publishEssay(input: PublishInput!): Boolean!
-}
-
-schema {
-  query: Query
-  mutation: Mutation
 }

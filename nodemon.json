@@ -1,0 +1,9 @@
+{
+  "watch": [
+    "server/**/*.js",
+    "api/**/*.js",
+    "api/**/*.gql",
+    "now.json",
+    "now-secrets.json"
+  ]
+}

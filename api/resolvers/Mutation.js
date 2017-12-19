@@ -14,10 +14,9 @@ exports.publishEssay = async (_, { input }, { models, request }) => {
       } characters long, and the maximum allowed is 140.`
     );
   }
-  const content = models.Essay.formatEssay(input);
 
   try {
-    await models.Essay.commit({ content, ...input });
+    await models.Essay.commit(input);
   } catch (error) {
     throw new Error('Failed to commit the file to GitHub.');
   }

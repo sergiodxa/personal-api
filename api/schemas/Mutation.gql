@@ -1,0 +1,4 @@
+type Mutation {
+  # Upload a new essay to the GitHub repository and let Travis start a new deployment
+  publishEssay(input: PublishInput!): Boolean!
+}

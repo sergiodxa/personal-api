@@ -1,0 +1,4 @@
+type Query {
+  # Get a single essay using his slug to search it
+  getEssay(slug: String!): Essay!
+}
