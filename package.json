@@ -31,10 +31,6 @@
     "url": "https://github.com/sergiodxa/personal-api/issues"
   },
   "homepage": "https://sergio.now.sh",
-  "now": {
-    "name": "personal-api",
-    "alias": "sergio-api.now.sh"
-  },
   "dependencies": {
     "@grial/connector-fs": "^1.0.1",
     "@grial/server": "^1.5.1",
