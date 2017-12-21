@@ -19,21 +19,20 @@ function formatEssay({ content, ...meta }) {
 module.exports = async ({ fs, gh }) => {
   return {
     async retrieve(slug) {
-      try {
-        const essay = await fs.read(
-          resolve(`./data/essays/${slug}.md`),
-          'utf-8'
-        );
-        const { content, meta } = parseEssay(essay);
+      const essay = await fs.read(
+        resolve(`./data/essays/${slug}.md`),
+        'utf-8'
+      );
+      
+      const { content, meta } = parseEssay(essay);
 
-        if (!meta.published && process.env.NODE_ENV === 'production') {
-          throw new Error('The essay is not published.');
-        }
+      console.log(meta);
 
-        return { content, meta };
-      } catch (error) {
-        throw new ReferenceError("The essay doesn't exits");
+      if (!meta.published && process.env.NODE_ENV === 'production') {
+        throw new Error('The essay is not published.');
       }
+
+      return { content, meta };
     },
 
     async create(input) {
