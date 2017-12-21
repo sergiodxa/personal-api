@@ -11,9 +11,11 @@ tags:
   - Now
   - Career change
 ---
+
 Today I leave my job as Frontend Developer at [Platzi](https://platzi.com/) to start working as Support Engineer at [**▲ZEIT**](https://zeit.co/).
 
 ## Platzi
+
 I worked at Platzi for almost 2 years, it was a really cool job, I knew some amazing people who worked with me or were teachers in our courses. Some of them I now consider them as good friends.
 
 I also learned a lot about Frontend, Backend, video streaming, DevOps, etc. I worked in many awesome projects for the platform like our live system, the discussion system, the React-Django server render implementation, our video player, etc.
@@ -21,6 +23,7 @@ I also learned a lot about Frontend, Backend, video streaming, DevOps, etc. I wo
 I had the opportunity to open source some JS libraries, one of the most important is the Platzi’s markdown text editor [Pulse Editor](https://github.com/PlatziDev/pulse-editor) and a desktop application, made with Electron.js, [Pulse](https://github.com/PlatziDev/pulse).
 
 ## ▲ZEIT
+
 After knowing **▲ZEIT** and using their products and services I’m in love with that company and it’s mission.
 
 > Make Cloud Computing as Easy and Accessible as Mobile computing.
@@ -30,6 +33,7 @@ Deploy an app to production it’s the last most important step in any software 
 The **▲ZEIT** mission it’s to make easy that step that is sometimes too complicated, specially when working with a microservices architecture.
 
 ## My new job
+
 I’m going to be a Support Engineer, what does that means? My job is help you use **▲ZEIT** products and services without problem and guide you in the process if necessary.
 
 It’s a really big career shift, I’m going to keep developing but in a different way. I need to develop to understand our products and services.
@@ -41,6 +45,7 @@ That means I will learn a lot, I will teach a lot of people and I will develop m
 I also need to document a lot, since my primary job is teach how to use Now I must document it completely, and create a really good documentation so anyone can easily learn how to use it.
 
 ## Why English?
+
 Until now, I had the rule of only writing in Spanish, that was because I wanted to give more knowledge to the Spanish development community. But starting today I need to teach Now to any people in the world.
 
 That’s way I decided to start writing in English today. I’m going to keep learning a lot and writing as far as I can but I’ll do it exclusively in English.
