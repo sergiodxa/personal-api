@@ -16,7 +16,7 @@ exports.publishEssay = async (_, { input }, { models, request }) => {
   }
 
   try {
-    await models.Essay.commit(input);
+    await models.Essay.create(input);
   } catch (error) {
     throw new Error('Failed to commit the file to GitHub.');
   }

@@ -18,7 +18,7 @@ function formatEssay({ content, ...meta }) {
 
 module.exports = async ({ fs, gh }) => {
   return {
-    async getEssay(slug) {
+    async retrieve(slug) {
       try {
         const essay = await fs.read(
           resolve(`./data/essays/${slug}.md`),
@@ -36,7 +36,7 @@ module.exports = async ({ fs, gh }) => {
       }
     },
 
-    async commit(input) {
+    async create(input) {
       const content = formatEssay(input);
       const buffer = Buffer.from(content, 'utf8');
 
