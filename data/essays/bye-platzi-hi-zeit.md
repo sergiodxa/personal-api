@@ -4,7 +4,7 @@ slug: bye-platzi-hi-zeit
 date: 2017-07-07T04:50:53.214Z
 description: Today I leave my job as Frontend Developer at Platzi to start working as Support Engineer at ▲ZEIT.
 published: true
-canonicalUrl: https://medium.com/@sergiodxa/bye-platzi-hi-zeit-2d1604a0b7b7
+canonicalUrl: https://medium.com/@sergiodxa/2d1604a0b7b7
 tags:
   - Platzi
   - ZEIT

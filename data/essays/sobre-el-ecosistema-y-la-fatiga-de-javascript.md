@@ -4,7 +4,7 @@ slug: sobre-el-ecosistema-y-la-fatiga-de-javascript
 date: 2016-10-10T14:01:02.185Z
 published: true
 description: Desde hace ya un tiempo han ido saliendo un montón de artículos sobre JS Fatigue, tantos que hasta hay artículos sobre la fatiga de esta.
-canonicalUrl: https://medium.com/@sergiodxa/sobre-el-ecosistema-y-la-fatiga-de-javascript-73027048413f
+canonicalUrl: https://medium.com/@sergiodxa/73027048413f
 tags:
   - JavaScript
   - Frontend

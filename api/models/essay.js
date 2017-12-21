@@ -23,7 +23,7 @@ module.exports = async ({ fs, gh }) => {
         resolve(`./data/essays/${slug}.md`),
         'utf-8'
       );
-      
+
       const { content, meta } = parseEssay(essay);
 
       if (!meta.published && process.env.NODE_ENV === 'production') {
