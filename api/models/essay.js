@@ -26,8 +26,6 @@ module.exports = async ({ fs, gh }) => {
       
       const { content, meta } = parseEssay(essay);
 
-      console.log(meta);
-
       if (!meta.published && process.env.NODE_ENV === 'production') {
         throw new Error('The essay is not published.');
       }
