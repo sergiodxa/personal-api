@@ -13,8 +13,6 @@ async function main() {
 
   if (!process.env.NOW) {
     const morgan = require('morgan');
-    const compression = require('compression');
-    server.use(compression());
     server.use(morgan('common'));
   }
 
