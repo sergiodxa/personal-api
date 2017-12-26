@@ -1,5 +1,7 @@
 require('now-env');
 
+const { PORT = 3002 } = process.env;
+
 const Grial = require('@grial/server');
 const express = require('express');
 
@@ -18,7 +20,7 @@ async function main() {
 
   server.use(handle);
 
-  server.listen(3002);
+  server.listen(PORT);
 }
 
 function errorHandler(error) {
@@ -26,4 +28,6 @@ function errorHandler(error) {
   process.exit(0);
 }
 
-main().catch(errorHandler);
+main()
+  .then(() => console.log(`API running on port ${PORT}`))
+  .catch(errorHandler);
