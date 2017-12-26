@@ -2,8 +2,6 @@ require('now-env');
 
 const Grial = require('@grial/server');
 const express = require('express');
-const morgan = require('morgan');
-const compression = require('compression');
 
 const api = new Grial(process.env);
 const handle = api.getRequestHandler();
@@ -13,9 +11,10 @@ async function main() {
 
   const server = express();
 
-  server.use(compression());
-
   if (!process.env.NOW) {
+    const morgan = require('morgan');
+    const compression = require('compression');
+    server.use(compression());
     server.use(morgan('common'));
   }
 
