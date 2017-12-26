@@ -76,9 +76,9 @@ In our case we wrote an internal component to send the HTTP request data and gen
 
 ## Write as Much as You Can and as Less as Possible
 
-The API documentation should be as completd as possible and that mean you need to write a lot of example codes and text. But at the same time there's not a single person who want to read a book just to understand a single API endpoints.
+The API documentation should be as completd as possible and that mean you need to write a lot of example codes and text. But at the same time there's not a single person who want to read a book just to understand a single API endpoint.
 
-This led us to try to write as less as possible and make the documentation super simple. The simpler and completed the docs the easier the users will pick the API and use it.
+This led us to try to write as less as possible and make the documentation super simple. The simpler and completed the docs most possible the users will understand the API and use it.
 
 ## The Design Matters
 
@@ -100,7 +100,7 @@ A simple and bored docs just tell you how each endpoints works. A good documenta
 
 This way the user will not only learn how to use your API but also what's the best and recommended way to use it. Similar to why [errors are important](#errors-are-important) this hints and tips could become on less support work required for the users of your API because you're already teaching them how to use it.
 
-_[ZDB]: ZEIT Day Berlin
-_[RDD]: Readme Driven Development
-_[REPL]: Read–Eval–Print Loop
-_[docs]: Documentation
+*[ZDB]: ZEIT Day Berlin
+*[RDD]: Readme Driven Development
+*[REPL]: Read–Eval–Print Loop
+*[docs]: Documentation
