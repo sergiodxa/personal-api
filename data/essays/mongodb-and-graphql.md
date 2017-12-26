@@ -3,6 +3,7 @@ title: Why I think MongoDB is a good DB for GraphQL services
 date: 2017-11-04T00:00:00Z
 description: MongoDB's lack of relations made it an actually good DB for GraphQL which doesn't allow us to really use our relations when running queries.
 slug: mongodb-and-graphql
+published: false
 ---
 
 For a long time I thought MongoDB had only a few little use cases and in most application you should always use a SQL-like database, specially PostgreSQL since it even allow to write JSON files inside rows.

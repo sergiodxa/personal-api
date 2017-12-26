@@ -3,6 +3,7 @@ title: Documentation, Lessons Learned
 date: YYYY-MM-DDT00:00:00Z
 description: After a month working on the documentation of ZEIT APIs I want to share some insights.
 slug: documentation
+published: false
 tags:
   - ZEIT
   - Now

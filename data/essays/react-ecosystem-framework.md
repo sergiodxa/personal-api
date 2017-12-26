@@ -3,6 +3,7 @@ title: React may be a library, but his ecosystem is a framework
 date: YYYY-MM-DDT00:00:00Z
 description:
 slug: react-ecosystem-framework
+published: false
 ---
 
 React is always sold as a library, but even if that's true, we (the community) created a framework around react made of little (or not that little) packages intended to be used with React. I'm going to list some of the most common or expected features in frameworks like Ember and Angular with the React community.
@@ -101,6 +102,7 @@ Webpack && Babel
 
 ## And more...
 
-${/_ abbreviatures _/''}
+<!-- abbreviatures -->
+
 _[REF]: React Ecosystem Framework
 _[CRA]: Create React App \*[CNA]: Create Next App

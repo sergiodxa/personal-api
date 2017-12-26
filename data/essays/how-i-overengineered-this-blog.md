@@ -2,6 +2,7 @@
 title: How I overengineered this blog
 date: 2017-12-05T00:00:00Z
 description:
+published: false
 slug: how-i-overengineered-this-blog
 ---
 
