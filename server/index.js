@@ -20,7 +20,7 @@ async function main() {
 
   server.use(handle);
 
-  server.listen(3000);
+  server.listen(3002);
 }
 
 function errorHandler(error) {
