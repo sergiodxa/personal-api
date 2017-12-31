@@ -8,7 +8,6 @@
     "deploy": "now --token $TOKEN",
     "postdeploy": "npm run alias",
     "alias": "now alias --token $TOKEN",
-    "postalias": "npm run clean",
     "clean": "now rm personal-api --safe --yes --token $TOKEN"
   },
   "repository": {
