@@ -80,4 +80,4 @@ To conclude testing is important and if implemented gradually is not going to be
 
 This can guarantee the stability of an application and security to deploy without thinking the whole app is going to break in production.
 
-@[twitter](https://twitter.com/sergiodxa/status/895831530773381120)
+@[twitter](895831530773381120)
