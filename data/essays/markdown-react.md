@@ -212,7 +212,7 @@ function matchElement({ tagName children, attributes }, index) {
 }
 ```
 
-Gracias a esta función vamos a convertir cualquier etiqueta HTML que generemos desde nuestor Markdown a elementos de React, incluso como vimos con `<twitter-card>` podemos renderizar cualquier componente para manejar casos especiales y únicos.
+Gracias a esta función vamos a convertir cualquier etiqueta HTML que generemos desde nuestro Markdown a elementos de React, incluso como vimos con `<twitter-card>` podemos renderizar cualquier componente para manejar casos especiales y únicos.
 
 El resultado que obtuvimos en la constante `jsx` podemos ahora insertarlo dentro de un componente normal de React o simplemente renderizarlo con ReactDOM.
 
