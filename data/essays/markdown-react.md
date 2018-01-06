@@ -4,6 +4,12 @@ date: 2018-01-06T05:43:35.609Z
 description: Crea un parser que transforme Markdown a componentes de React.js
 slug: markdown-react
 published: true
+tags:
+  - JavaScript
+  - React
+  - React Native
+  - Markdown
+  - Spanish
 ---
 
 Markdown es una tecnología genial para poder escribir fácilmente contenido de texto, una de las mejores cosas es que si bien está pensado para ser transformado en HTML es posible usarlo para transformarlo en cualquier otra tecnología, por ejemplo componentes de React.
