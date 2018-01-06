@@ -24,6 +24,5 @@ exports.publishEssay = async (_, { input }, { models, request }) => {
 };
 
 exports.subscribe = async (_, { email }, { models }) => {
-  await models.Subscription.subscribe(email);
-  return true;
+  return await models.Subscription.subscribe(email);
 };

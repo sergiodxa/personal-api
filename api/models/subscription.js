@@ -21,9 +21,16 @@ module.exports = async ({ mailchimp, MAILCHIMP_LIST_ID }) => {
 
       const { title, status, detail } = await response.json();
       if (status > 299) {
-        throw new Error(`${title}: ${detail}`);
+        switch (title) {
+          case 'Member Exists': {
+            return "You're already subscribed 😉.";
+          }
+          default: {
+            throw new Error(`${title}: ${detail}`);
+          }
+        }
       }
-      return true;
+      return 'You were successfully subscribed.';
     }
   };
 };
