@@ -1,7 +1,6 @@
 exports.publishEssay = async (_, { input }, { models, request }) => {
-  const { token } = request;
-
   if (process.env.NODE_ENV === 'production') {
+    const { token } = request;
     if (token !== process.env.API_TOKEN) {
       throw new Error('Not Authorized.');
     }
@@ -21,5 +20,10 @@ exports.publishEssay = async (_, { input }, { models, request }) => {
     throw new Error('Failed to commit the file to GitHub.');
   }
 
+  return true;
+};
+
+exports.subscribe = async (_, { email }, { models }) => {
+  await models.Subscription.subscribe(email);
   return true;
 };

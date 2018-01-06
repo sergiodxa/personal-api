@@ -4,6 +4,8 @@
   "env": {
     "GITHUB_TOKEN": "@gh_personal_site_token",
     "API_TOKEN": "@personal_api_token",
+    "MAILCHIMP_API_TOKEN": "@mailchimp_api_token",
+    "MAILCHIMP_LIST_ID": "@mailchimp_list_id",
     "BASE_PATH": "./api",
     "NODE_ENV": "@env",
     "PORT": 3002
