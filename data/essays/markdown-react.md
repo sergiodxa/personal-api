@@ -55,7 +55,7 @@ const tweet = regexp(/@\[twitter\]\(([^\)]*)\)/, match => {
 export default tweet;
 ```
 
-Ese plugin va a detectar `@[twitter](id)`, donde `id` es el ID de un tweet que se ve en su URL, y en su lugar va a agregar `<twitter-card id={id}></twitter-card>`, podríamos crear un WebComponent que se encargue de renderizar el tweet or podemos luego detectar esa etiqueta y renderizar un component de React personalizado.
+Ese plugin va a detectar `@[twitter](id)`, donde `id` es el ID de un tweet que se ve en su URL, y en su lugar va a agregar `<twitter-card id={id}></twitter-card>`, podríamos crear un WebComponent que se encargue de renderizar el tweet o podemos luego detectar esa etiqueta y renderizar un componente de React personalizado.
 
 Por último le decimos al parser que agregue use nuestro plugin con la siguiente línea:
 
