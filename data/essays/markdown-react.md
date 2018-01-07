@@ -71,7 +71,7 @@ const html = parser.render(markdown);
 
 ## HTML a JSON
 
-Una vez tenemos nuestro HTML podemos hacer lo que queramos, por ejemplo instertarlo dentro de cualquier página web. Si usamos React.js la forma de usar el HTML sería con `dangerouslySetInnerHTML`.
+Una vez tenemos nuestro HTML podemos hacer lo que queramos, por ejemplo insertarlo dentro de cualquier página web. Si usamos React.js la forma de usar el HTML sería con `dangerouslySetInnerHTML`.
 
 ```js
 return (
