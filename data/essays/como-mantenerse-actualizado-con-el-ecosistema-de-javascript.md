@@ -1,6 +1,6 @@
 ---
 title: ¿Cómo mantenerse actualizado con el ecosistema de JavaScript?
-date: 2017-08-06T17:26:03.721Z
+date: 2018-01-12T17:53:42.064Z
 slug: como-mantenerse-actualizado-con-el-ecosistema-de-javascript
 description: Cómo mantenerse actualizado es una pregunta común al comenzar, acá hay una lista de maneras útiles de hacerlo y no morir en el proceso.
 published: true
