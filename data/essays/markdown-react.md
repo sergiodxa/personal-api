@@ -4,6 +4,7 @@ date: 2018-01-06T05:43:35.609Z
 description: Crea un parser que transforme Markdown a componentes de React.js
 slug: markdown-react
 published: true
+lang: es
 tags:
   - JavaScript
   - React

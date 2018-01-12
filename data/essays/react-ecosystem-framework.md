@@ -3,6 +3,7 @@ title: React may be a library, but his ecosystem is a framework
 date: YYYY-MM-DDT00:00:00Z
 description:
 slug: react-ecosystem-framework
+lang: en
 published: false
 ---
 

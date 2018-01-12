@@ -3,12 +3,13 @@ title: How I overengineered this blog
 date: 2017-12-05T00:00:00Z
 description:
 published: false
+lang: en
 slug: how-i-overengineered-this-blog
 ---
 
 Personal and pet projects are the best projects to practice and over engineer things. Mostly because you're the only one affected if this cause you more work (as far as you keep doing them in your own free time of course).
 
-With that in mind I keep implementing ideas to this blog just for the sake of learning and having fun. This is how I ended up overengineering this blog.
+With that in mind I keep implementing ideas to this blog just for the sake of learning and having fun. This is how I ended up overengineering this blog **a lot**.
 
 ## Exported Next.js app
 
@@ -20,7 +21,7 @@ I also implemented a Service Worker which is created at the build phase. This SW
 
 ## GraphQL API for essays
 
-The next thing is I have a GraphQL API used to get the essays from the file system, they read Markdown files with a content similar to:
+The next thing is I have a GraphQL API which I use to get the essays from the file system, they read Markdown files with a content similar to:
 
 ```markdown
 ---

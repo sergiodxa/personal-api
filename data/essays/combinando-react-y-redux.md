@@ -4,6 +4,7 @@ date: 2016-03-28T07:18:42.542Z
 description: Redux es especialmente bueno al usarlo con librerías como React ya que facilita usar React solo para la UI y dejar el estado en Redux.
 slug: combinando-react-y-redux
 published: true
+lang: es
 canonicalUrl: https://medium.com/react-redux/7b45a9dc39ac
 tags:
   - React

@@ -3,6 +3,7 @@ title: Components
 description: The UI components of the site
 slug: components
 date: YYYY-MM-DDT00:00:00Z
+lang: en
 published: false
 ---
 

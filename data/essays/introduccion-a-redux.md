@@ -4,6 +4,7 @@ date: 2016-03-23T15:52:14.733Z
 description: Redux es una librería para controlar el estado de nuestras WebApps fácilmente, de forma consistente entre cliente y servidor y una gran DX.
 slug: introduccion-a-redux
 published: true
+lang: es
 canonicalUrl: https://medium.com/react-redux/8bdf4fe0751e
 tags:
   - React

@@ -5,6 +5,7 @@ description:
 slug: definiendo-conceptos-closures-y-scope
 published: true
 canonicalUrl: https://medium.com/@sergiodxa/9081f1e113e6
+lang: es
 tags:
   - JavaScript
   - Programming

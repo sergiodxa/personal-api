@@ -5,6 +5,7 @@ slug: how-to-keep-updated-with-the-javascript-ecosystem
 description: How to keep updated is a common questions when starting, here you can find a list of useful ways to do it and not die in the process.
 published: true
 canonicalUrl: https://medium.com/@sergiodxa/97c8e36c2c3f
+lang: en
 tags:
   - JavaScript
   - Ecosystem
