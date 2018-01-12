@@ -1,3 +1,12 @@
+type Translate {
+  # The original essay URL
+  url: String!
+  # The original essay language
+  lang: String!
+  # The original essay title
+  title: String!
+}
+
 type Essay {
   # The unique identifier of the essay
   id: ID!
@@ -19,6 +28,10 @@ type Essay {
   canonicalUrl: String
   # If the essay is published it will be used in the list of essays
   published: Boolean
+  # If it's a translate of another essay
+  translateFrom: Translate 
+  # A string declaring the essay language
+  lang: String!
 }
 
 input PublishInput {
