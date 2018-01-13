@@ -1,5 +1,5 @@
-const { resolve } = require('path');
-const frontmatter = require('frontmatter');
+const { resolve } = require("path");
+const frontmatter = require("frontmatter");
 
 function parseEssay(rawContent) {
   const { data: meta, content } = frontmatter(rawContent);
@@ -19,15 +19,12 @@ function formatEssay({ content, ...meta }) {
 module.exports = async ({ fs, gh }) => {
   return {
     async retrieve(slug) {
-      const essay = await fs.read(
-        resolve(`./data/essays/${slug}.md`),
-        'utf-8'
-      );
+      const essay = await fs.read(resolve(`./data/essays/${slug}.md`), "utf-8");
 
       const { content, meta } = parseEssay(essay);
 
-      if (!meta.published && process.env.NODE_ENV === 'production') {
-        throw new Error('The essay is not published.');
+      if (!meta.published && process.env.NODE_ENV === "production") {
+        throw new Error("The essay is not published.");
       }
 
       return { content, meta };
@@ -35,19 +32,19 @@ module.exports = async ({ fs, gh }) => {
 
     async create(input) {
       const content = formatEssay(input);
-      const buffer = Buffer.from(content, 'utf8');
+      const buffer = Buffer.from(content, "utf8");
 
       const response = await connectors.gh(
         `/repos/sergiodxa/personal-data/contents/essays/${slug}.md`,
         {
-          method: 'PUT',
+          method: "PUT",
           body: JSON.stringify({
             message: `Publish essay ${input.title}`,
             committer: {
-              name: 'Sergio Xalambrí',
-              email: 'sergiodxa@gmail.com'
+              name: "Sergio Xalambrí",
+              email: "sergiodxa@gmail.com"
             },
-            content: buffer.toString('base64')
+            content: buffer.toString("base64")
           })
         }
       );

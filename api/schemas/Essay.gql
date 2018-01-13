@@ -29,7 +29,7 @@ type Essay {
   # If the essay is published it will be used in the list of essays
   published: Boolean
   # If it's a translate of another essay
-  translateFrom: Translate 
+  translateFrom: Translate
   # A string declaring the essay language
   lang: String!
 }

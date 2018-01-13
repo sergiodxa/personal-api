@@ -1,9 +1,9 @@
-require('now-env');
+require("now-env");
 
 const { PORT = 3002 } = process.env;
 
-const Grial = require('@grial/server');
-const express = require('express');
+const Grial = require("@grial/server");
+const express = require("express");
 
 const api = new Grial(process.env);
 const handle = api.getRequestHandler();
@@ -14,8 +14,8 @@ async function main() {
   const server = express();
 
   if (!process.env.NOW) {
-    const morgan = require('morgan');
-    server.use(morgan('common'));
+    const morgan = require("morgan");
+    server.use(morgan("common"));
   }
 
   server.use(handle);

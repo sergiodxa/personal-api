@@ -1,8 +1,8 @@
 exports.publishEssay = async (_, { input }, { models, request }) => {
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === "production") {
     const { token } = request;
     if (token !== process.env.API_TOKEN) {
-      throw new Error('Not Authorized.');
+      throw new Error("Not Authorized.");
     }
   }
 
@@ -17,7 +17,7 @@ exports.publishEssay = async (_, { input }, { models, request }) => {
   try {
     await models.Essay.create(input);
   } catch (error) {
-    throw new Error('Failed to commit the file to GitHub.');
+    throw new Error("Failed to commit the file to GitHub.");
   }
 
   return true;
