@@ -3,4 +3,6 @@ type Mutation {
   publishEssay(input: PublishInput!): Boolean!
   # Subscribe to email list
   subscribe(email: String!): String!
+  # Login and get a token
+  login(email: String!): String!
 }

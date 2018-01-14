@@ -6,6 +6,8 @@
     "API_TOKEN": "@personal_api_token",
     "MAILCHIMP_API_TOKEN": "@mailchimp_api_token",
     "MAILCHIMP_LIST_ID": "@mailchimp_list_id",
+    "AWS_ACCESS_KEY_ID": "@aws_access_key",
+    "AWS_SECRET_ACCESS_KEY": "@aws_secret_key",
     "BASE_PATH": "./api",
     "NODE_ENV": "@env",
     "PORT": 3002

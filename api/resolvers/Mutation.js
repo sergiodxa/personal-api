@@ -1,3 +1,5 @@
+const auth = require("../lib/auth");
+
 exports.publishEssay = async (_, { input }, { models, request }) => {
   if (process.env.NODE_ENV === "production") {
     const { token } = request;
@@ -25,4 +27,30 @@ exports.publishEssay = async (_, { input }, { models, request }) => {
 
 exports.subscribe = async (_, { email }, { models }) => {
   return await models.Subscription.subscribe(email);
+};
+
+exports.login = async (_, { email }, { models }) => {
+  if (email !== "hello@sergiodxa.com" && email !== "sergiodxa@gmail.com") {
+    throw new Error("Invalid email address. You're not allowed to login");
+  }
+
+  return await new Promise((resolve, reject) => {
+    const token = auth.attempt((error, token) => {
+      if (error) return reject(error);
+      return resolve(token);
+    });
+
+    const url = `https://api.sergiodxa.com/login?token=${token}`;
+
+    models.SES.sendEmail({
+      subject: "Login attempt at SDX.im",
+      to: email,
+      from: "hello@sergiodxa.com",
+      replyTo: "hello@sergiodxa.com",
+      body: {
+        html: `You tried to login with this email address on sergiodxa.com.
+To confirm the login go to <a href="${url}">${url}</a>`
+      }
+    }).catch(reject);
+  });
 };
