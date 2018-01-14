@@ -34,7 +34,7 @@ module.exports = async ({ fs, gh }) => {
       const content = formatEssay(input);
       const buffer = Buffer.from(content, "utf8");
 
-      const response = await connectors.gh(
+      const response = await gh(
         `/repos/sergiodxa/personal-data/contents/essays/${slug}.md`,
         {
           method: "PUT",

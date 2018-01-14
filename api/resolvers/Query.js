@@ -6,3 +6,8 @@ exports.getEssay = async (_, { slug }, { models }) => {
     content
   };
 };
+
+exports.getShortenedUrls = async (_, args, { models }) => {
+  const { content } = await models.Short.retrieve();
+  return Object.entries(content).map(([short, long]) => ({ short, long }));
+};

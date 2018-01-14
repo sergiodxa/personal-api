@@ -1,0 +1,4 @@
+type Short {
+  long: String!
+  short: String!
+}

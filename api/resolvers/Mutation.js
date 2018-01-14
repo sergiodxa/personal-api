@@ -3,7 +3,7 @@ const auth = require("../lib/auth");
 exports.publishEssay = async (_, { input }, { models, request }) => {
   if (process.env.NODE_ENV === "production") {
     const { token } = request;
-    if (token !== process.env.API_TOKEN) {
+    if (token !== auth.token) {
       throw new Error("Not Authorized.");
     }
   }
@@ -53,4 +53,17 @@ To confirm the login go to <a href="${url}">${url}</a>`
       }
     }).catch(reject);
   });
+};
+
+exports.shortUrl = async (_, { long, short }, { models }) => {
+  if (process.env.NODE_ENV === "production") {
+    const { token } = request;
+    if (token !== auth.token) {
+      throw new Error("Not Authorized.");
+    }
+  }
+
+  await models.Short.add({ long, short });
+
+  return { long, short };
 };
