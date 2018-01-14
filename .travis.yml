@@ -1,6 +1,11 @@
 language: node_js
 node_js:
   - "node"
-cache: npm
-install: npm install --production && npm install now --no-save
-script: npm run deploy
+install: echo "Dependencies installed on Now"
+before_deploy: npm install now --no-save
+deploy:
+  provider: script
+  script: npm run deploy
+  skip_cleanup: true
+  on:
+    branch: master
