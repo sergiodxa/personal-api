@@ -25,7 +25,11 @@ async function main() {
     const { token } = req.query;
     const approved = auth.approve(token);
     if (approved) {
-      res.status(200).send("<script>window.close();</script>");
+      res
+        .status(200)
+        .send(
+          "<script>window.close();</script><main><h1>Login successful!</h1></main>"
+        );
     } else {
       res.status(401).send("Unauthorized");
     }
