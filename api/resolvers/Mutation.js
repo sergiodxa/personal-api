@@ -49,7 +49,9 @@ exports.login = async (_, { email }, { models }) => {
       replyTo: "hello@sergiodxa.com",
       body: {
         html: `You tried to login with this email address on sergiodxa.com.
-To confirm the login go to <a href="${url}">${url}</a>`
+To confirm the login go to:
+
+<a href="${url}">${url}</a>`
       }
     }).catch(reject);
   });
