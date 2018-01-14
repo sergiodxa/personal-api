@@ -25,7 +25,7 @@ async function main() {
     const { token } = req.query;
     const approved = auth.approve(token);
     if (approved) {
-      res.redirect(301, "https://sergiodxa.com");
+      res.status(200).send("<script>window.close();</script>");
     } else {
       res.status(401).send("Unauthorized");
     }
