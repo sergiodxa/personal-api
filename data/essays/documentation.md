@@ -93,7 +93,7 @@ Yes, text organization is part of a good design and could be the difference betw
 
 Is easy to just write the documentation and ship it, but must possible something you can think is easy to read and understand could be actually harder. It's always (not just for documentation) a good idea to get a second opinion.
 
-It could be a co-working not really working on the API docs or an external (but trusty) person who can just read it and give a valuable opinion and feedback. Don't just show it to everyone, pick the people you think will help you improve the documentation.
+It could be a co-worker not really working on the API docs or an external (but trusty) person who can just read it and give a valuable opinion and feedback. Don't just show it to everyone, pick the people you think will help you improve the documentation.
 
 ## Give Hints and Tips
 
