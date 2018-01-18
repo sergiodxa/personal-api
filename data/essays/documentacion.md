@@ -16,13 +16,13 @@ tags:
   - Lesson learned
 ---
 
-Hoy en ▲ZEIT [lanzamos](https://zeit.co/blog/api-2) nuestra nueva y renovada [documentación del API](https://zeit.co/api), estuve trabajando en ella desde ZDB a cargo de escrribir la documentación y código relacionado con la documentación. Documentar nuestra API pública por completo me ayudó a aprender y entender más sobre nuestra infrastructura y como funciona Now internamente.
+En ▲ZEIT [lanzamos](https://zeit.co/blog/api-2) nuestra nueva y renovada [documentación del API](https://zeit.co/api), estuve trabajando en ella desde ZDB a cargo de escribir la documentación y código relacionado con la documentación. Documentar nuestra API pública por completo me ayudó a aprender y entender más sobre nuestra infrastructura y cómo funciona Now internamente.
 
 Después de meses de trabajar en eso quiero compartir algunas cosas que aprendí.
 
 ## Documenta tu código
 
-Esto es realmente importante, necesitas documentar tu código lo más posible. No digo que agregues comentarios para cada línea de código, pero si estás haciendo un microservicio HTTP simplemente agregá un README al respositorio con una simple descripción de cada endpoint, que recibe en cada petición y la respuesta que envía.
+Esto es realmente importante, necesitas documentar tu código lo más posible. No digo que agregues comentarios para cada línea de código, pero si estás haciendo un microservicio HTTP simplemente agregá un README al repositorio con una simple descripción de cada endpoint, que recibe en cada petición y la respuesta que envía.
 
 ```markdown
 ## GET /teams/:id/members
@@ -37,25 +37,25 @@ Get the list of members of the team `:id`.
 * `username` (`String`) The username of the team member
 ```
 
-Algo simple como eso es suficiente. Como desarrollador descubrí que una muy buena forma de empezar un proyecto como una librería o un servicio HTTP es con su API pública, crea un README, escribe como se debería usar el proyecto y recién entonces programalo, esto es llamado [RDD](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
+Algo simple como eso es suficiente. Como desarrollador descubrí que una muy buena forma de empezar un proyecto, como puede ser una librería o un servicio HTTP, es con su API pública, crea un README, escribí como se debería usar el proyecto y recién entonces programalo, esto es llamado [RDD](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
 
 Si te preocupás por otras personas y especialmente de la persona a cargo de documentar tu código por favor hacé esto.
 
-## Los errors son importantes
+## Los errores son importantes
 
 A nadie le gustan los errores, pero todos los tenemos. No podés esperar que los usuarios del API siempre lo usen bien y no tengan errores. Ellos van a tenerlos, más de lo que creas y es tu trabajo mientras documentás explicar cuales son los posibles errores, como lucen y posibles soluciones.
 
-Esto puede hacer una gran diferencia ya que de hacerlo le estás dando a los usuario la posibilidad de buscar fácilmente cualquier error y la solución, eso significa menos dolores de cabeza para los usuariros y menos trabajo de soporte para la empresa.
+Esto puede hacer una gran diferencia ya que de hacerlo le estás dando a los usuarios la posibilidad de buscar fácilmente cualquier error y la solución, eso significa menos dolores de cabeza para los usuarios y menos trabajo de soporte para la empresa.
 
-También significa que hay que definir una forma estandarizada de enviar errores a los usuarios. No puedes simplemente enviar un código de estado HTTP para algunos errores y un JSON para otros. **Debe** estar estandarizada de forma que puedas explicar fácilmente como leer los errores.
+También significa que hay que definir una forma estandarizada de enviar errores a los usuarios. No puedés simplemente enviar un código de estado HTTP para algunos errores y un JSON para otros. **Debe** estar estandarizado de forma que puedas explicar fácilmente como leer los errores.
 
 ### [Errores enlazables](https://rauchg.com/2016/addressable-errors)
 
 En un mensaje de error, no importa el formato, siempre hay un límite en cuanto se puede explicar. Esa es la razón por la que siempre terminamos buscando el mismo mensaje de error exacto en Google una y otra vez.
 
-Ayudate y a tus usuarios y agrega una URL única para cada error donde se pueda extender la información del errors, las razones para tenerlo y las posibles soluciones.
+Ayudate a vos mismo y a tus usuarios y agrega una URL única para cada error donde se pueda extender la información del errores, las razones para tenerlo y las posibles soluciones.
 
-Puntos extra si lo hacés de código abierto. De esa forma los usuarios pueden contribuír con mejoras con el tiempo, si alguna vez programaste PHP su documentación está llena de comentarios útiles de otros desarrolladores que normalmente te ayudan a entender algo del lenguaje más fácilmente que la misma documentación.
+Puntos extra si lo hacés de código abierto. De esa forma los usuarios pueden contribuir con mejoras con el tiempo, si alguna vez programaste PHP su documentación está llena de comentarios útiles de otros desarrolladores que normalmente te ayudan a entender algo del lenguaje más fácilmente que la misma documentación.
 
 ## Prueba, todo
 
@@ -105,6 +105,6 @@ Una documentación simple y aburrida simplemente te dice como funciona cada endp
 
 De esta forma el usuario no solo va a aprender como usar el API, también cual es la mejor forma de hacerlo o la más recomendad. Al igual que por qué los [errores son importantes](#los-errores-son-importantes), estos consejos pueden ayudar a reducir el trabajo de soporte necesario para los usuario del API ya que la misma documentación le está enseñando como usarla bien.
 
-[ZDB]: ZEIT Day Berlin
-[RDD]: Readme Driven Development
-[REPL]: Read–Eval–Print Loop
+*[ZDB]: ZEIT Day Berlin
+*[RDD]: Readme Driven Development
+*[REPL]: Read–Eval–Print Loop
