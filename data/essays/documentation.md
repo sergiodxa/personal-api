@@ -1,9 +1,9 @@
 ---
 title: Documentation, Lessons Learned
-date: YYYY-MM-DDT00:00:00Z
-description: After a month working on the documentation of ZEIT APIs I want to share some insights.
+date: 2018-01-17T21:18:58.320Z
+description: After working on the documentation of the ZEIT's API I want to share some insights I learnt from it.
 slug: documentation
-published: false
+published: true
 lang: en
 tags:
   - ZEIT
@@ -12,34 +12,34 @@ tags:
   - Lesson learned
 ---
 
-Today at ▲ZEIT we're launching our newly renewed [API documentation](https://zeit.co/api), I've been working on that project since the ZDB in charge of writing the documentation plus some code related to it. Documenting our whole public API help me learn and understand more about our infrastructure and how Now works internally.
+Today at ▲ZEIT [we are launching](https://zeit.co/blog/api-2) our newly renewed [API documentation](https://zeit.co/api), I've been working on that project since the ZDB in charge of writing the documentation plus some code related to it. Documenting our whole public API help me learn and understand more about our infrastructure and how Now works internally.
 
-And after a month working on it I want to share some of the thinks I learned.
+And after months working on it I want to share some thinks I learnt.
 
 ## Document Your Code
 
-This is really important, you need to document your code as completely as possible. I'm not saying you need to add a comment for each line of code but if you're doing a HTTP microservice just add a README to your repository with a simple description of each endpoint, what it receives as request and how it looks the response.
+This is really important, you need to document your code as completely as possible. I'm not saying you need to add a comment for each line of code but if you're doing an HTTP microservice just add a README to your repository with a simple description of each endpoint, what it receives as request and how it looks the response.
 
 ```markdown
 ## GET /teams/:id/members
 
-Get the list of members of the team \`:id\`.
+Get the list of members of the team `:id`.
 
 ### Response
 
-* \`uid\` (\`String\`) The team member unique identifier
-* \`role\` (\`String\`) The role inside the team, it could be OWNER or MEMBER
-* \`email\` (\`String\`) The email address of the team member
-* \`username\` (\`String\`) The username of the team member
+* `uid` (`String`) The team member unique identifier
+* `role` (`String`) The role inside the team, it could be OWNER or MEMBER
+* `email` (`String`) The email address of the team member
+* `username` (`String`) The username of the team member
 ```
 
-Something simple like that could be enough. As a developer I found that a really good way to start a project like a library or HTTP service is with the public API, create the README, wrote how the project should be used and then code it, this is what's called [RDD](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
+Something simple like that could be enough. As a developer I found that a really good way to start a project like a library or an HTTP service is with the public API, create the README, wrote how the project should be used and then code it, this is what's called [RDD](http://tom.preston-werner.com/2010/08/23/readme-driven-development.html).
 
 If you care about other people and specially about the guy in charge of documenting your code please do this.
 
 ## Errors Are Important
 
-Nobody likes errors, but we all have them. No one can't expect the users of an API will always use it fine and never face an error. They'll, most often that you think and is your job while documenting to explain what are the possible errors, how they look like and a possible solution.
+Nobody likes errors, but we all have them. No one can't expect the users of an API will always use it fine and never face an error. They'll, most often than you think and is your job while documenting to explain what are the possible errors, how they look like and a possible solution.
 
 This could make a big difference because if you do it you're giving the user the power to easily search any error and get the solution, that means less headaches for the user and less support work for the company.
 
@@ -55,9 +55,9 @@ Bonus point, make it open source, that way people can just improve it overtime, 
 
 ## Try, Everything
 
-You may be tempted to just write the docs without testing it, in most cases it could just work and everyone is happy, in other cases it'll not work, you may have a typo on your docs, the README could be outdated or maybe you just misunderstood the code.
+You may be tempted to just write the docs without testing it, in most cases it could just work and everyone is happy, in other cases it will not work, you may have a typo on your docs, the README could be outdated or maybe you just misunderstood the code.
 
-That's why you need a way to try every possible case for the API, in a HTTP based API you can just send a request to each endpoint and check the results.
+That's why you need a way to try every possible case for the API, in an HTTP based API you can just send a request to each endpoint and check the response.
 
 ## Let the User Try It
 
@@ -65,9 +65,9 @@ The same way you need to try every piece of documentation your users will want t
 
 ### REPL
 
-The first one (and usually harder to implement) is to add a REPL, on the ▲ZEIT docs we decided to put a simple editor to test our most important endpoint, \`/v2/now/deployments\`, which let you create a new deployment with a single API request.
+The first one (and usually harder to implement) is to add a REPL, on the ▲ZEIT docs we decided to put a simple editor to test our most important endpoint, `/v2/now/deployments`, which let you create a new deployment with a single API request.
 
-This editor let you write the code of a \`package.json\` and \`index.js\` file, see a cURL example request and a button to deploy it with one click from the docs.
+This editor let you write the code of a `package.json` and `index.js` file, see a cURL example request and a button to deploy it with one click from the docs.
 
 ### Copy-Past Ready Code
 
@@ -93,7 +93,7 @@ Yes, text organization is part of a good design and could be the difference betw
 
 Is easy to just write the documentation and ship it, but must possible something you can think is easy to read and understand could be actually harder. It's always (not just for documentation) a good idea to get a second opinion.
 
-It could be a co-working not really working on the API docs or an external (but trusty) perrson who can just read it and give a valuable opinion and feedback. Don't just show it to everyone, pick the people you think will help you improve the documentation.
+It could be a co-working not really working on the API docs or an external (but trusty) person who can just read it and give a valuable opinion and feedback. Don't just show it to everyone, pick the people you think will help you improve the documentation.
 
 ## Give Hints and Tips
 
@@ -101,7 +101,7 @@ A simple and bored docs just tell you how each endpoints works. A good documenta
 
 This way the user will not only learn how to use your API but also what's the best and recommended way to use it. Similar to why [errors are important](#errors-are-important) this hints and tips could become on less support work required for the users of your API because you're already teaching them how to use it.
 
-*[ZDB]: ZEIT Day Berlin
-*[RDD]: Readme Driven Development
-*[REPL]: Read–Eval–Print Loop
-*[docs]: Documentation
+[ZDB]: ZEIT Day Berlin
+[RDD]: Readme Driven Development
+[REPL]: Read–Eval–Print Loop
+[docs]: Documentation
