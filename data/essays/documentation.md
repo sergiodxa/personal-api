@@ -1,7 +1,7 @@
 ---
 title: Documentation, Lessons Learned
 date: 2018-01-17T21:18:58.320Z
-description: After working on the documentation of the ZEIT's API I want to share some insights I learnt from it.
+description: After working on the documentation of the ZEIT's API I want to share some insights I learned from it.
 slug: documentation
 published: true
 lang: en
@@ -14,7 +14,7 @@ tags:
 
 Today at ▲ZEIT [we are launching](https://zeit.co/blog/api-2) our newly renewed [API documentation](https://zeit.co/api), I've been working on that project since the ZDB in charge of writing the documentation plus some code related to it. Documenting our whole public API help me learn and understand more about our infrastructure and how Now works internally.
 
-And after months working on it I want to share some thinks I learnt.
+And after months working on it I want to share some thinks I learned.
 
 ## Document Your Code
 
