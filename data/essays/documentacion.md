@@ -57,15 +57,15 @@ Ayudate a vos mismo y a tus usuarios y agrega una URL única para cada error don
 
 Puntos extra si lo hacés de código abierto. De esa forma los usuarios pueden contribuir con mejoras con el tiempo, si alguna vez programaste PHP su documentación está llena de comentarios útiles de otros desarrolladores que normalmente te ayudan a entender algo del lenguaje más fácilmente que la misma documentación.
 
-## Prueba, todo
+## Probá todo
 
 Capaz estés tentado a solo escribir la documentación sin probarla, en la mayoría de los casos va a funcionar y todos van a ser felices, en otros casos no va a funcionar, capaz tengas un error, el README del endpoint estaba desactualizado o no entendiste bien algo.
 
-Es por eso que siempre debés probar cada posible caso del API, en API basadas en HTTP podés simplemente enviar una petición a cada endpoint y revisar el resultado.
+Es por eso que siempre debés probar cada posible caso del API, en las que están basadas en HTTP podés simplemente enviar una petición a cada endpoint y revisar el resultado.
 
 ## Dejá que el usuario lo pruebe
 
-De la misma forma que necesitás probar cada piece de la documentación los usuarios también van a querer hacerlo. Dales una forma fácil de hacerlo. Acá hay algunas opciones.
+De la misma forma que necesitás probar cada parte de la documentación los usuarios también van a querer hacerlo. Dales una forma fácil de hacerlo. Acá hay algunas opciones.
 
 ### REPL
 
@@ -73,15 +73,15 @@ La primera (y usualmente más difícil de implementar) es agregar un REPL, en la
 
 Este editor te deja escribír el código de un `package.json` y un `index.js`, ver un ejemplo de una petición usando cURL y agregar un botón para hacer deploy con un click desde la documentación.
 
-### Copiar y pegar código listo
+### Código listo para copiar y pegar
 
-Otra opción es escribir código listo para usar que el usuario pueda simplemente copiar y pegar. Esto le permite al usuario simplemente ir a la terminar, editor o IDE y ejecutar el ejemplo de código para ver el resultado y que efectivamente funciona.
+Otra opción es escribir código listo para usar que el usuario pueda simplemente copiar y pegar. Esto le permite al usuario simplemente ir a la terminal, editor o IDE y ejecutar el código para ver el resultado y que, efectivamente, funciona.
 
-En nuestro caso [creamos un componente interno](https://github.com/zeit/docs/blob/master/components/api/request.js) que le pasamos los datos de la petición HTTP y genera la petición en cURL, el mismo componente puede generar código de JS usando [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) o cualquier otro y le permite al usuario definir su lenguaje favorito para ver los ejemplos.
+En nuestro caso [creamos un componente interno](https://github.com/zeit/docs/blob/master/components/api/request.js) que le pasamos los datos de la petición HTTP y genera la petición en cURL, el mismo componente puede generar código de JS usando [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) o cualquier otra tecnología y le permite al usuario definir su lenguaje favorito para ver los ejemplos.
 
-## Escribo tanto como puedas y tan como como sea posible
+## Escribí tanto como puedas y tan poco como sea posible
 
-La documentación del API debería ser tan completa como sea posible y esoo significa escribir un montón de ejemplos de código y texto. Pero al mismo tiempo nadie quiere leer un libro solo para entender un endpoint de un API.
+La documentación del API debería ser tan completa como sea posible y eso significa escribir un montón de ejemplos de código y texto. Pero al mismo tiempo nadie quiere leer un libro solo para entender un endpoint de un API.
 
 Esto nos lleva a escribir tan poco como sea posible y hacer la documentación super simple. Lo más simple y completa que sea la documentación más usuarios van a entenderla y usarla.
 
@@ -89,21 +89,21 @@ Esto nos lleva a escribir tan poco como sea posible y hacer la documentación su
 
 Los desarrolladores tendemos a subestimar la importancia de un bueno diseño, especialmente para nuestro propios proyectos, pero un bueno diseño es _obligatorio_ para una buena documentación (y cualquier proyecto en general) y ayuda a los usuarios a entenderla más rápido.
 
-El diseñador de ▲ZEIT [Evil Rabbit](https://twitter.com/evilrabbit_) hizo un increíble trabajo en cada parte de la UI de la documentación e incluso ayudó a decidir como organizar el contenido. 
+El diseñador de ▲ZEIT, [Evil Rabbit](https://twitter.com/evilrabbit_), hizo un increíble trabajo en cada parte de la UI de la documentación e incluso ayudó a decidir como organizar el contenido. 
 
-Sí, la organización del contenido es parte de un buen diseño y puede ser la diferencia entre un diseño fácil de entender y un completo desastre.
+Sí, la organización del contenido es parte de un buen diseño y puede ser la diferencia entre una documentación fácil de entender y un completo desastre.
 
 ## Tené una segunda opinión
 
 Es fácil simplemente escribir la documentación y publicarla, pero probablemente algo que creas que es simple de leer y entender puede en realidad ser difícil. Siempre es (no solo para documentación) una buena idea tener una segunda opinión.
 
-Puede ser un compañero de trabajo que no esté trabajando en la documentación del API o una persona externa (pero confiable) que pueda simplemente leerla y dar una opinión valiosa. No se lo muestres simplemente a todo el mundo, elegía a las personas que crees pueden ayudar a mejorar la documentación.
+Puede ser un compañero de trabajo que no esté trabajando en la documentación directamente o una persona externa (pero confiable) que pueda simplemente leerla y dar una opinión valiosa. No se lo muestres a todo el mundo, elegí a las personas que crees pueden ayudar a mejorar la documentación.
 
 ## Da ayudas y consejos
 
-Una documentación simple y aburrida simplemente te dice como funciona cada endpoint. Una buena documentación te da ayudas y consejos de como usarla de la mejor manera posible. Esto puede ser tan simple como una nota o explicar casos de uso comunes.
+Una documentación simple y aburrida solamente te dice como funciona cada endpoint. Una buena documentación te da ayudas y consejos de como usarla de la mejor manera posible. Esto puede ser tan simple como una nota o explicar casos de uso comunes.
 
-De esta forma el usuario no solo va a aprender como usar el API, también cual es la mejor forma de hacerlo o la más recomendad. Al igual que por qué los [errores son importantes](#los-errores-son-importantes), estos consejos pueden ayudar a reducir el trabajo de soporte necesario para los usuario del API ya que la misma documentación le está enseñando como usarla bien.
+De esta forma el usuario no solo va a aprender como usar el API, también cual es la mejor forma de hacerlo o la más recomendada. Al igual que por qué los [errores son importantes](#los-errores-son-importantes), estos consejos pueden ayudar a reducir el trabajo de soporte necesario para los usuario del API ya que la misma documentación está enseñando como usar bien el API.
 
 *[ZDB]: ZEIT Day Berlin
 *[RDD]: Readme Driven Development

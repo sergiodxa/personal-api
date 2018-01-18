@@ -73,7 +73,7 @@ This editor let you write the code of a `package.json` and `index.js` file, see 
 
 Another option is to write ready to use code the user could just copy-paste it. This way the user can just go to the terminal, code editor or IDE and run the example code to check the results and if it works.
 
-In our case we wrote an internal component to send the HTTP request data and generate a cURL code, but that same component could generate a [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) code for JS or any other possible code and let the user define his favourite language of choice to see the example.
+In our case [we wrote an internal component](https://github.com/zeit/docs/blob/master/components/api/request.js) to send the HTTP request data and generate a cURL code, but that same component could generate a [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) code for JS or any other possible code and let the user define his favourite language of choice to see the example.
 
 ## Write as Much as You Can and as Less as Possible
 
