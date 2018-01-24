@@ -19,7 +19,13 @@ function formatEssay({ content, ...meta }) {
 module.exports = async ({ fs, gh }) => {
   return {
     async retrieve(slug) {
-      const essay = await fs.read(resolve(`./data/essays/${slug}.md`), "utf-8");
+      const response = await gh(
+        `/repos/sergiodxa/personal-data/contents/essays/${slug}.md`
+      );
+
+      const { content: rawContent, sha } = await response.json();
+
+      const essay = Buffer.from(rawContent, "base64").toString();
 
       const { content, meta } = parseEssay(essay);
 
@@ -27,7 +33,7 @@ module.exports = async ({ fs, gh }) => {
         throw new Error("The essay is not published.");
       }
 
-      return { content, meta };
+      return { content, meta, sha };
     },
 
     async create(input) {
