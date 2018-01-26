@@ -21,15 +21,15 @@
   ],
   "author": {
     "name": "Sergio Daniel Xalambrí",
-    "email": "sergiodxa@gmail.com",
-    "url": "https://sergio.now.sh/"
+    "email": "hello@sergiodxa.com",
+    "url": "https://sergiodxa.com/"
   },
   "license": "MIT",
   "private": true,
   "bugs": {
     "url": "https://github.com/sergiodxa/personal-api/issues"
   },
-  "homepage": "https://sergio.now.sh",
+  "homepage": "https://sergiodxa.com",
   "dependencies": {
     "@grial/connector-fs": "^1.0.1",
     "@grial/server": "^1.5.1",
