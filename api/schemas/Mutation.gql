@@ -1,3 +1,21 @@
+input Link {
+  # The language of the link
+  lang: String!
+  # The URL of the link
+  url: String!
+}
+
+input NewsletterInput {
+  # Subject of the email
+  title: String!
+  # List of emails to send the newsletter to
+  emails: [String]!
+  # The list of links for each language
+  links: [Link]!
+  # The description of the essay
+  description: String!
+}
+
 type Mutation {
   # Upload a new essay to the GitHub repository and let Travis start a new deployment
   publishEssay(input: PublishInput!): Boolean!
@@ -7,4 +25,6 @@ type Mutation {
   login(email: String!): String!
   # Setup a new short URL in personal-shortening
   shortUrl(short: String!, long: String!): Short!
+  # Send a new newsletter email
+  sendNewsletter(input: NewsletterInput!): Boolean!
 }

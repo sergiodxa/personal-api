@@ -1,13 +1,8 @@
-const auth = require("../lib/auth");
+const auth = require("../lib/auth.js");
+const private = require("../lib/private.js");
+const newsletterTemplate = require("../lib/newsletter-template.js");
 
-exports.publishEssay = async (_, { input }, { models, request }) => {
-  if (process.env.NODE_ENV === "production") {
-    const { token } = request;
-    if (token !== auth.token) {
-      throw new Error("Not Authorized.");
-    }
-  }
-
+exports.publishEssay = private(async (_, { input }, { models, request }) => {
   if (input.description.length > 140) {
     throw new Error(
       `The essays description is too long, it's ${
@@ -23,7 +18,7 @@ exports.publishEssay = async (_, { input }, { models, request }) => {
   }
 
   return true;
-};
+});
 
 exports.subscribe = async (_, { email }, { models }) => {
   return await models.Subscription.subscribe(email);
@@ -57,15 +52,38 @@ To confirm the login go to:
   });
 };
 
-exports.shortUrl = async (_, { long, short }, { models }) => {
-  if (process.env.NODE_ENV === "production") {
-    const { token } = request;
-    if (token !== auth.token) {
-      throw new Error("Not Authorized.");
-    }
-  }
-
+exports.shortUrl = private(async (_, { long, short }, { models }) => {
   await models.Short.add({ long, short });
 
   return { long, short };
-};
+});
+
+exports.sendNewsletter = private(async (_, { input }, { models }) => {
+  const { title, emails, links, description } = input;
+
+  await Promise.all(
+    emails.map(email => {
+      const token = Buffer.from(email)
+        .toString("base64")
+        .split("")
+        .reverse()
+        .join("")
+        .slice(2)
+        .split("")
+        .reverse()
+        .join("");
+
+      return models.SES.sendEmail({
+        subject: title,
+        to: email,
+        from: "hello@sergiodxa.com",
+        replyTo: "hello@sergiodxa.com",
+        body: {
+          html: newsletterTemplate({ description, token, links })
+        }
+      });
+    })
+  );
+
+  return true;
+});
