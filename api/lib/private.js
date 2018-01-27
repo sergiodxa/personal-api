@@ -1,4 +1,4 @@
-const auth = require("./lib/auth");
+const auth = require("./auth.js");
 
 function private(fn) {
   return (_, args, context) => {
