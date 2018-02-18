@@ -1,6 +1,8 @@
 const { resolve } = require("path");
 const frontmatter = require("frontmatter");
 
+const cache = new Map();
+
 function parseEssay(rawContent) {
   const { data: meta, content } = frontmatter(rawContent);
 
@@ -19,9 +21,9 @@ function formatEssay({ content, ...meta }) {
 module.exports = async ({ fs, gh }) => {
   return {
     async retrieve(slug) {
-      const response = await gh(
-        `/repos/sergiodxa/personal-data/contents/essays/${slug}.md`
-      );
+      const response = cache.has(slug)
+        ? cache.get(slug)
+        : await gh(`/repos/sergiodxa/personal-data/contents/essays/${slug}.md`);
 
       const { content: rawContent, sha } = await response.json();
 
