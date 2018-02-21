@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "nodemon .",
     "start": "node .",
+    "test": "echo 'No tests defined'",
     "deploy": "now --token $TOKEN",
     "postdeploy": "npm run alias",
     "alias": "now alias --token $TOKEN",
