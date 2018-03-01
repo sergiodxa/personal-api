@@ -1,4 +1,5 @@
 exports.getEssay = async (_, { slug }, { models }) => {
+  console.log(models.Essay);
   const { meta, content } = await models.Essay.retrieve(slug);
   return {
     slug,
