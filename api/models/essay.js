@@ -18,12 +18,28 @@ function formatEssay({ content, ...meta }) {
   return `---\n${frontMatter}\n---\n${content}`;
 }
 
-module.exports = async ({ fs, gh }) => {
+module.exports = async ({ fs, gh, analytics }) => {
   return {
     async retrieve(slug) {
-      const response = cache.has(slug)
-        ? cache.get(slug)
-        : await gh(`/repos/sergiodxa/personal-data/contents/essays/${slug}.md`);
+      if (cache.has(slug)) {
+        const { content, meta, sh } = cache.get(slug);
+
+        if (!meta.published && process.env.NODE_ENV === "production") {
+          throw new Error("The essay is not published.");
+        }
+
+        analytics({
+          type: "info",
+          action: "API - Essay",
+          description: `Essay ${meta.title} retrieved from cache`
+        });
+
+        return { content, meta, sha };
+      }
+
+      const response = await gh(
+        `/repos/sergiodxa/personal-data/contents/essays/${slug}.md`
+      );
 
       const { content: rawContent, sha } = await response.json();
 
@@ -35,10 +51,24 @@ module.exports = async ({ fs, gh }) => {
         throw new Error("The essay is not published.");
       }
 
+      cache.set(slug, { content, meta, sha });
+
+      analytics({
+        type: "info",
+        action: "API - Essay",
+        description: `Essay ${meta.title} retrieved from GitHub`
+      });
+
       return { content, meta, sha };
     },
 
     async create(input) {
+      analytics({
+        type: "info",
+        action: "API - Essay",
+        description: "Publishing new essay"
+      });
+
       const content = formatEssay(input);
       const buffer = Buffer.from(content, "utf8");
 
@@ -56,6 +86,13 @@ module.exports = async ({ fs, gh }) => {
           })
         }
       );
+
+      analytics({
+        type: "info",
+        action: "API - Essay",
+        description: `Essay ${input.title} published`
+      });
+
       return await response.json();
     }
   };
