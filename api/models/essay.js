@@ -22,7 +22,7 @@ module.exports = async ({ fs, gh, analytics }) => {
   return {
     async retrieve(slug) {
       if (cache.has(slug)) {
-        const { content, meta, sh } = cache.get(slug);
+        const { content, meta, sha } = cache.get(slug);
 
         if (!meta.published && process.env.NODE_ENV === "production") {
           throw new Error("The essay is not published.");
