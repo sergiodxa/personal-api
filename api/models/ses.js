@@ -4,7 +4,7 @@ function toArray(v) {
   return Array.isArray(v) ? v : [v];
 }
 
-module.exports = async ({ ses, analytics }) => {
+module.exports = async ({ ses }) => {
   return {
     sendEmail({ subject, to, body: { html, text }, from, replyTo }) {
       // define email parameters
@@ -34,18 +34,8 @@ module.exports = async ({ ses, analytics }) => {
           if (err) {
             // eslint-disable-next-line no-console
             console.error(err, err.stack);
-            analytics({
-              action: "API - SES",
-              description: `Email ${subject} to ${to} failed`,
-              type: "error"
-            });
             return reject(err);
           }
-          analytics({
-            action: "API - SES",
-            description: `Email ${subject} to ${to} sent`,
-            type: "info"
-          });
           return resolve(data);
         });
       });

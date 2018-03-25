@@ -1,4 +1,3 @@
-const { resolve } = require("path");
 const frontmatter = require("frontmatter");
 
 const cache = new Map();
@@ -28,12 +27,6 @@ module.exports = async ({ fs, gh, analytics }) => {
           throw new Error("The essay is not published.");
         }
 
-        analytics({
-          type: "info",
-          action: "API - Essay",
-          description: `Essay ${meta.title} retrieved from cache`
-        });
-
         return { content, meta, sha };
       }
 
@@ -52,12 +45,6 @@ module.exports = async ({ fs, gh, analytics }) => {
       }
 
       cache.set(slug, { content, meta, sha });
-
-      analytics({
-        type: "info",
-        action: "API - Essay",
-        description: `Essay ${meta.title} retrieved from GitHub`
-      });
 
       return { content, meta, sha };
     },
@@ -86,12 +73,6 @@ module.exports = async ({ fs, gh, analytics }) => {
           })
         }
       );
-
-      analytics({
-        type: "info",
-        action: "API - Essay",
-        description: `Essay ${input.title} published`
-      });
 
       return await response.json();
     }

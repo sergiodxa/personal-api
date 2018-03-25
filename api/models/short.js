@@ -1,11 +1,6 @@
-module.exports = async ({ gh, analytics }) => {
+module.exports = async ({ gh }) => {
   return {
     async retrieve() {
-      analytics({
-        type: "info",
-        action: "API - Shortening",
-        description: "Retrieving list of shorted URLs"
-      });
       const response = await gh(
         "/repos/sergiodxa/personal-shortening/contents/data/urls.json",
         {
@@ -18,11 +13,6 @@ module.exports = async ({ gh, analytics }) => {
     },
 
     async add({ long, short }) {
-      analytics({
-        type: "info",
-        action: "API - Shortening",
-        description: "Adding new short URL"
-      });
       const { content, sha } = await this.retrieve();
 
       const newContent = Object.assign({}, content, {
@@ -50,17 +40,7 @@ module.exports = async ({ gh, analytics }) => {
             })
           }
         );
-        analytics({
-          type: "info",
-          action: "API - Shortening",
-          description: `Added new short URL from ${short} to ${long}`
-        });
       } catch (error) {
-        analytics({
-          type: "error",
-          action: "API - Shortening",
-          description: `Add new short URL failed: ${error.message}`
-        });
         throw error;
       }
 
