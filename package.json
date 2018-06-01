@@ -36,7 +36,7 @@
     "@grial/server": "1.5.1",
     "aws-sdk": "2.181.0",
     "cuid": "2.1.1",
-    "express": "4.16.2",
+    "express": "4.16.3",
     "frontmatter": "0.0.3",
     "lodash": "4.17.4",
     "morgan": "1.9.0",
