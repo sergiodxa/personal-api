@@ -43,7 +43,7 @@
     "node-fetch": "1.7.3",
     "now-env": "3.0.2",
     "strip": "3.0.0",
-    "validator": "9.2.0"
+    "validator": "9.4.1"
   },
   "devDependencies": {
     "nodemon": "1.14.11"
