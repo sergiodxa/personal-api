@@ -40,7 +40,7 @@
     "frontmatter": "0.0.3",
     "lodash": "4.17.4",
     "morgan": "1.9.0",
-    "node-fetch": "1.7.3",
+    "node-fetch": "2.1.2",
     "now-env": "3.0.2",
     "strip": "3.0.0",
     "validator": "9.2.0"
